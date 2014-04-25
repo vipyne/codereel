@@ -1,0 +1,107 @@
+@font-face {
+  font-family: elephant;
+  src: url(elep.woff);
+}
+
+body {
+  position: absolute;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-nav {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 67.5em;
+  position: relative;
+  height: 10px;
+  z-index: 10;
+}
+
+header {
+  position: fixed;
+  margin: 0;
+  background-color: #fff;
+  height: 3.75em;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+
+section {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+h2 {
+  display: table;
+  height: 200px;
+  font-size: 123px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  display: table-cell;
+  color: #000;
+  font-size: 100%;
+}
+
+#pipe, h2 {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  width: 10px;
+  height: 200px;
+}
+
+#pipe {
+  background-color: #000;
+}
+
+img {
+  margin: 25px 0 0;
+  z-index: 300;
+  width: 237px;
+}
+
+.bg{
+  background-image: url('../img/headlines2.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: 500px auto;
+  margin: 0;
+  height: 100%;
+  position: fixed;
+}
+
+@media only screen and (max-width: 500px) {
+  .bg {
+    background-size: 135% auto;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  h2 {
+    font-size: 14vw;
+  }
+  #pipe {
+    width: 14%;
+    height: 20vw;
+  }
+}
