@@ -5,8 +5,10 @@ get '/' do
 end
 
 get '/code.html' do
-  erb :code
+  redirect "http://vanessa.rhymeswithart.com/code.html"
+  # erb :code
 end
 
-get 'reel/index.html' do
+get '/reel/index.html' do
+  redirect "http://vanessa.rhymeswithart.com/reel/index.html"
 end
