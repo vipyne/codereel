@@ -1,3 +1,2 @@
-require 'vanessapyne'
-
-run Vanessapyne.new
+require './server.rb'
+run Sinatra::Application
