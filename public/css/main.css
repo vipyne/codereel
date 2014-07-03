@@ -12,21 +12,13 @@ body {
   width: 100%;
 }
 
-header {
-  position: fixed;
-  margin: 60px 0 0;
-  height: 3.75em;
-  left: 0;
-  right: 0;
-  z-index: 10000;
-}
-
 section {
   text-align: center;
 }
 
 ul {
   padding: 0;
+  vertical-align: middle;
 }
 
 li {
@@ -49,7 +41,7 @@ a {
 }
 
 a:hover {
-  color: teal;
+  color: rgb(35,186,200);
 }
 
 #pipe, h2 {
@@ -68,14 +60,71 @@ img {
   display: block;
   margin: 15px auto 0;
   z-index: 300;
+}
+
+.vanessa-pyne-logo {
   width: 237px;
 }
 
+.index-link {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
 .logo {
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 600;
+  text-align: center;
 }
+
+.social-media {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 67.5em;
+  position: relative;
+  text-align: center;
+}
+
+.all-wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -6em;
+  padding: 0;
+}
+
+footer,
+.push {
+  height: 6em;
+  margin-top: .5em;
+}
+
+.invisible {
+  display: none;
+}
+
+.icon {
+  margin-bottom: -8px;
+}
+
+
+/*   *   *  INDEX  *   *   */
+
+.index {
+  position: fixed;
+  margin: 60px 0 0;
+  height: 3.75em;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+
+
+/*   *   *   CODE   *   *   */
 
 .code {
   position: relative;
@@ -86,19 +135,56 @@ img {
   z-index: 10000;
 }
 
-.bg{
-  background-image: url('../img/headlines2.png');
-  background-repeat: no-repeat;
-  background-position-x: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-size: 500px auto;
-  margin: 0;
-  height: 100%;
-  position: fixed;
-  z-index: 1;
+
+
+/*   *   *   REEL   *   *   */
+
+.reel {
+  background-color: rgb(0,0,0);
 }
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+.video-reel {
+  margin: 20px auto 0;
+  max-height: 540px;
+  max-width: 960px;
+}
+
+.foot-spacer {
+  height: 30px;
+  width: 100%;
+  max-width: 300px;
+  min-width: 85px;
+  margin-top: 3px;
+}
+
+.foot-width {
+  margin: 0 auto;
+  max-width: 960px;
+  min-width: 400px;
+}
+
+.working-papers {
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(200,200,200);
+}
+
+.right-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
+
+/*   *   *  @MEDIA  *   *   */
 
 @media only screen and (max-width: 500px) {
   .bg {
@@ -107,7 +193,7 @@ img {
 }
 
 @media only screen and (max-width: 850px) {
-  header {
+  .index {
     margin: -1% 0 0;
   }
   h2 {

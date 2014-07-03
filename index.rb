@@ -12,3 +12,7 @@ end
 get '/reel/index.html' do
   redirect "http://vanessa.rhymeswithart.com/reel/index.html"
 end
+
+get '/reel.html' do
+  erb :reel
+end
