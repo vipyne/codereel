@@ -206,9 +206,9 @@ video {
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 930px) {
   .index {
-    margin: -1% 0 0;
+    /*margin: -1% 0 0;*/
   }
   h2 {
     font-size: 11vw;
