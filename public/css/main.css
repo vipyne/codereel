@@ -1,6 +1,6 @@
 @font-face {
   font-family: elephant;
-  src: url(elep.woff);
+  src: url(ELEPHNT.woff);
 }
 
 body {
@@ -10,6 +10,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: elephant;
 }
 
 section {
@@ -35,7 +36,6 @@ h2 {
 
 a {
   text-decoration: none;
-  display: table-cell;
   color: #000;
   font-size: 100%;
 }
@@ -111,6 +111,7 @@ footer,
 }
 
 
+
 /*   *   *  INDEX  *   *   */
 
 .index {
@@ -122,19 +123,33 @@ footer,
   z-index: 10000;
 }
 
+.main {
+  display: table-cell;
+}
+
 
 
 /*   *   *   CODE   *   *   */
 
 .code {
   position: relative;
+  margin: 30px auto;
 }
 
 .code-list {
-  text-align: left;
   z-index: 10000;
 }
 
+.small-pic {
+  margin-bottom: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.table-cell {
+}
 
 
 /*   *   *   REEL   *   *   */
@@ -157,7 +172,7 @@ video {
 .foot-spacer {
   height: 30px;
   max-width: 300px;
-  min-width: 85px;
+  min-width: 100px;
   margin-top: 3px;
 }
 
@@ -171,7 +186,7 @@ video {
   display: inline-block;
   text-align: center;
   font-size: 20px;
-  color: rgb(200,200,200);
+  color: rgb(125,125,125);
 }
 
 .right-align {
