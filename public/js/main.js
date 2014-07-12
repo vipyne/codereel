@@ -11,12 +11,10 @@ console.log('hi nerds')
   var $footer, footerHeight
 
   function footerPosition(){
-    console.log('poop')
     $footer = $('footer')
     footerHeight = $('footer').height()
 
     if($(window).height() > $('.all-wrap').height() + footerHeight){
-      console.log('yup')
       $footer.css({
         position: 'absolute'
       }).animate({
