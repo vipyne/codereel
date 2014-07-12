@@ -8,24 +8,20 @@ console.log('hi nerds')
 /////////////////////////////
 
 // $(window).bind("load", function() {
-  var $footer, footerTop, footerHeight, bodyHeight
-
-  footerPosition()
+  var $footer, footerHeight
 
   function footerPosition(){
+    console.log('poop')
     $footer = $('footer')
-    footerTop = $(window).scrollTop() + $(window).height() - footerHeight + 'px'
     footerHeight = $('footer').height()
-    bodyHeight = $('.all-wrap').height()
 
-    // debugger
-
-    if($(window).height() > bodyHeight + footerHeight){
+    if($(window).height() > $('.all-wrap').height() + footerHeight){
+      console.log('yup')
       $footer.css({
         position: 'absolute'
       }).animate({
-        top: footerTop
-      })
+        top: $(window).scrollTop() + $(window).height() - footerHeight + 'px'
+      }, 10)
     }else{
       $footer.css({
         position: 'static'
@@ -33,6 +29,7 @@ console.log('hi nerds')
     }
   }
 
+  footerPosition()
   $(window)
     .scroll(footerPosition)
     .resize(footerPosition)
