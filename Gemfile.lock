@@ -42,4 +42,5 @@ PLATFORMS
 
 DEPENDENCIES
   github_api
+  nokogiri
   sinatra
