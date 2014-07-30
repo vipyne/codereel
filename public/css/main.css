@@ -41,7 +41,8 @@ a {
 }
 
 a:hover {
-  color: rgb(35,186,200);
+  /*color: rgb(35,186,200);*/
+  color: rgb(24,214,167);
 }
 
 #pipe, h2 {
@@ -86,7 +87,6 @@ img {
   text-align: center;
 }
 
-
 footer {
   height: 6em;
   margin-top: .5em;
@@ -97,7 +97,11 @@ footer {
 }
 
 .icon {
-  margin-bottom: -8px;
+  margin-bottom: -6px;
+}
+
+#cv {
+  font-size: 22px;
 }
 
 
