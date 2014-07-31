@@ -54,7 +54,8 @@ var footer = (function(){
 var hover = (function(){
 
   // var host = 'http://localhost:4567/'
-  var host = 'http://vanessa.rhymeswithart.com/'
+  // var host = 'http://vanessa.rhymeswithart.com/'
+  var host = 'http://vanessapyne.herokuapp.com/'
 
   var afterSrc = function(icon){
     var hover
