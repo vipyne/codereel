@@ -1,3 +1,5 @@
+/* i know i need to add more font types for greater
+browser compatibility, but woffs will do for now */
 @font-face {
   font-family: elephant;
   src: url(ELEPHNT.woff);
@@ -11,6 +13,8 @@ body {
   height: 100%;
   width: 100%;
   font-family: elephant;
+  font-variant: small-caps;
+  letter-spacing: 3px;
 }
 
 section {
@@ -41,7 +45,6 @@ a {
 }
 
 a:hover {
-  /*color: rgb(35,186,200);*/
   color: rgb(24,214,167);
 }
 
@@ -85,10 +88,11 @@ img {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  visibility: hidden;
 }
 
 footer {
-  height: 6em;
+  height: 5em;
   margin-top: .5em;
 }
 
@@ -97,11 +101,15 @@ footer {
 }
 
 .icon {
-  margin-bottom: -6px;
+  margin-bottom: -5px;
 }
 
 #cv {
-  font-size: 22px;
+  font-size: 16px;
+}
+
+.content {
+  text-align: center;
 }
 
 
@@ -119,6 +127,11 @@ footer {
   display: table-cell;
 }
 
+#dyptic-reel,
+#dyptic-code {
+  letter-spacing: 0 !important;
+}
+
 
 
 /*   *   *   CODE   *   *   */
@@ -133,27 +146,57 @@ footer {
 }
 
 .small-pic {
-  margin-bottom: 15px;
+  margin-top: 5px !important;
 }
 
 .center {
-  text-align: center;
 }
 
 .project {
   margin: auto;
   height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 150px;
+  line-height: 75%;
+  text-align: left;
+  padding: 10px;
 }
 
-.github {
-  text-align: center;
+.github-streak {
+  text-align: center !important;
   padding: 10px, 0;
 }
 
+#vimeo,
+#shot-list {
+  text-align: center;
+  font-family: arial;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: rgb(128,128,128);
+}
+
+#vimeo:hover,
+#shot-list:hover {
+  color: rgb(24,214,167);
+}
+
+.site {
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.language {
+  font-family: arial;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-align: left;
+  margin: 8px 0;
+}
+
+.limit {
+  max-width: 650px;
+  margin: 0 auto;
+}
 
 /*   *   *   REEL   *   *   */
 
@@ -177,12 +220,6 @@ video {
   max-width: 300px;
   min-width: 100px;
   margin-top: 3px;
-}
-
-.foot-width {
-  margin: 0 auto;
-  max-width: 960px;
-  min-width: 400px;
 }
 
 .working-papers {

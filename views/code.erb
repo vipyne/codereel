@@ -3,62 +3,93 @@
   <head>
     <meta charset="utf-8" />
     <title>vanessa pyne | code</title>
-    <meta name="keywords" content="vanessa pyne, pyne, ruby, RoR, web developer, motion graphics, freelance, design, designer, animator, javascript, new york, san francisco, ny, sf">
+    <meta name="keywords" content="vanessa pyne, pyne, ruby, RoR, web developer, freelance, design, designer, javascript, new york, san francisco, ny, sf">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
     <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body class="main">
+
+  <div class="logo">
+    <a class="index-link" href="/"><img class="vanessa-pyne-logo" src="img/vip-grey.png"></a>
+  </div>
+
   <div class="all-wrap">
-
-    <div class="logo">
-      <a class="index-link" href="/"><img class="vanessa-pyne-logo" src="img/vip-grey.png"></a>
-    </div>
-
-    <p class="github">current github streak: <%= @streak %> days</p>
-
-    <section class="code">
-      <ul class="code-list">
-        <li class="center">
-          <div class="project">
-            <a class="site" href="http://printstacard.herokuapp.com" target="_blank">#printstacard<img class="border small-pic" src="img/print.png"></a><a class="site" href="http://github.com/vipyne/orphan-crazy-eyes/tree/3-4-14" target="_blank">on github</a>
-          </div>
-        </li>
-        <li class="center">
-          <div class="project">
-            <a class="site" href="http://votetext.herokuapp.com" target="_blank">untitled vote text project<img class="border small-pic" src="img/vote.png"></a><a class="site" href="http://github.com/vipyne/getVoteText_play" target="_blank">on github</a>
-          </div>
-        </li>
-        <li class="center">
-          <div class="project">
-            <a class="site" href="http://pimp-my-meme.herokuapp.com" target="_blank">pimp my meme<img class="border small-pic" src="img/pimp.png"></a><a class="site" href="http://github.com/fox-squirrels-2013/DVM/tree/van-12-9-13" target="_blank">on github</a>
-          </div>
-        </li>
-      </ul>
-    </section>
-
+    <article class="content limit">
+      <p class="github-streak language">current github streak: <%= @streak %> days</p>
+      <section class="code">
+        <ul class="code-list">
+          <li class="center">
+            <div class="project">
+              <a class="working-papers" href="http://github.com/vipyne/orphan-crazy-eyes/tree/3-4-14" target="_blank"><img class="icon github" alt="github" src="img/github-before.png" width="15" height="15"></a>
+              <a class="site" href="http://printstacard.herokuapp.com" target="_blank">#printstacard</a>
+              <p class="language">(rails)</p>
+              <a class="site" href="http://printstacard.herokuapp.com" target="_blank"><img class="border small-pic" src="img/print.png"></a>
+            </div>
+          </li>
+          <li class="center">
+            <div class="project">
+              <a class="working-papers" href="http://github.com/vipyne/getVoteText_play" target="_blank"><img class="icon github" alt="github" src="img/github-before.png" width="15" height="15"></a>
+              <a class="site" href="http://votetext.herokuapp.com" target="_blank">untitled vote text project</a>
+              <p class="language">(rails)</p>
+              <a class="site" href="http://votetext.herokuapp.com" target="_blank"><img class="border small-pic" src="img/vote.png"></a>
+            </div>
+          </li>
+          <li class="center">
+            <div class="project">
+              <a class="working-papers" href="http://github.com/fox-squirrels-2013/DVM/tree/van-12-9-13" target="_blank"><img class="icon github" alt="github" src="img/github-before.png" width="15" height="15"></a>
+              <a class="site" href="http://pimp-my-meme.herokuapp.com" target="_blank">pimp my meme</a>
+              <p class="language">(rails)</p>
+              <a class="site" href="http://pimp-my-meme.herokuapp.com" target="_blank"><img class="border small-pic" src="img/pimp.png"></a>
+            </div>
+          </li>
+          <li class="center">
+            <div class="project">
+              <a class="working-papers" href="https://github.com/vipyne/carousel" target="_blank"><img class="icon github" alt="github" src="img/github-before.png" width="15" height="15"></a>
+              <a class="site" href="http://rhymeswithart.com/olapic" target="_blank">image carousel</a>
+              <p class="language">(javascript)</p>
+              <a class="site" href="http://rhymeswithart.com/olapic" target="_blank"><img class="border small-pic" src="img/carousel.png"></a>
+            </div>
+          </li>
+          <li class="center">
+            <div class="project">
+              <a class="working-papers" href="https://github.com/vipyne/js_login" target="_blank"><img class="icon github" alt="github" src="img/github-before.png" width="15" height="15"></a>
+              <a class="site" href="https://github.com/vipyne/js_login" target="_blank">login validation</a>
+              <p class="language">(javascript)</p>
+              <a class="site" href="https://github.com/vipyne/js_login" target="_blank"><img class="border small-pic" src="img/login.png"></a>
+            </div>
+          </li>
+          <li class="center">
+            <div class="project">
+              <a class="working-papers" href="https://github.com/vipyne/email_prediction" target="_blank"><img class="icon github" alt="github" src="img/github-before.png" width="15" height="15"></a>
+              <a class="site" href="https://github.com/vipyne/email_prediction" target="_blank">email predictor</a>
+              <p class="language">(ruby)</p>
+              <a class="site" href="https://github.com/vipyne/email_prediction" target="_blank"><img class="border small-pic" src="img/email.png"></a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </article>
   </div>
   <footer class="social-media">
-    <div class="foot-width">
-      <ul class="social">
-        <li>
-          <a class="working-papers" href="http://instagram.com/vipyne" target="_blank"><img class="icon" alt="instagram" id="instagram" src="img/instagram-before.png" width="30" height="30"></a>
-        </li>
-        <li>
-          <a class="working-papers" href="http://github.com/vipyne" target="_blank"><img class="icon" alt="github" id="github" src="img/github-before.png" width="30" height="30"></a>
-        </li>
-        <li>
-          <a class="working-papers" id="cv" href="img/VanessaPyneResume_6-5-14.pdf" target="_blank">CV</a>
-        </li>
-        <li>
-          <a class="working-papers" href="http://twitter.com/vipyne" target="_blank"><img class="icon" alt="twitter" id="twitter" src="img/twitter-before.png" width="30" height="30"></a>
-        </li>
-        <li>
-          <a class="working-papers" href="http://linkedin.com/in/vanessapyne" target="_blank"><img class="icon" alt="linkedin" id="linkedin" src="img/linkedin-before.png" width="28" height="28"></a>
-        </li>
-      </ul>
-    </div>
+    <ul class="social">
+      <li>
+        <a class="working-papers" href="http://instagram.com/vipyne" target="_blank"><img class="icon" alt="instagram" id="instagram" src="img/instagram-before.png" width="20" height="20"></a>
+      </li>
+      <li>
+        <a class="working-papers" href="http://github.com/vipyne" target="_blank"><img class="icon" alt="github" id="github" src="img/github-before.png" width="20" height="20"></a>
+      </li>
+      <li>
+        <a class="working-papers" id="cv" href="img/VanessaPyneResume_6-5-14.pdf" target="_blank">CV</a>
+      </li>
+      <li>
+        <a class="working-papers" href="http://twitter.com/vipyne" target="_blank"><img class="icon" alt="twitter" id="twitter" src="img/twitter-before.png" width="20" height="20"></a>
+      </li>
+      <li>
+        <a class="working-papers" href="http://linkedin.com/in/vanessapyne" target="_blank"><img class="icon" alt="linkedin" id="linkedin" src="img/linkedin-before.png" width="18" height="18"></a>
+      </li>
+    </ul>
   </footer>
   <script type="text/javascript" src="js/main.js"></script>
   <script>
