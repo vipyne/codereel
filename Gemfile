@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 gem 'sinatra'
-gem 'github_api'
 gem 'nokogiri'
+gem 'capistrano', '~> 2.15.5'

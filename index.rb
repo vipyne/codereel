@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/code.html' do
-  getGithubCal
+  get_github_cal
   erb :code
 end
 
@@ -18,7 +18,7 @@ get '/reel.html' do
 end
 
 
-def getGithubCal
+def get_github_cal
   calendar = Nokogiri::HTML(open('https://github.com/users/vipyne/contributions_calendar_data'))
   str = calendar.xpath('//p')
   arr = str.children.text
