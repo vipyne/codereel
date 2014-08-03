@@ -4,7 +4,7 @@ default_run_options[:pty] = true
 
 # be sure to change these
 set :user, 'vipyne'
-set :domain, 'rhymeswithart.com'
+set :domain, 'rhymeswithart.com/public'
 set :application, 'codereel'
 
 # the rest should be good
