@@ -1,5 +1,3 @@
-require 'sinatra'
-require 'github_api'
 require 'nokogiri'
 require 'open-uri'
 require 'json'
