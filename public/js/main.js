@@ -131,27 +131,6 @@ hover.allIcons()
 /////////////////////////////
 /////////////////////////////
 
-// images
-// var imagess = (function(){
-//   var scale = 200
-//   var images = $('.small-pic')
-//   var resize = function(){
-//     $.each(images, function(index, image){
-//       var w = image.offsetWidth
-//       var h = image.offsetHeight
-//       var newWidth = scale
-//       var newHeight = (h * scale) / w
-//       image.style.width = newWidth + 'px'
-//       image.style.height = newHeight + 'px'
-//     })
-//   }
-//   return {
-//     resize: resize
-//   }
-// })()
-
-// imagess.resize()
-// github cal
 
 
 // R E E L //////////////////
