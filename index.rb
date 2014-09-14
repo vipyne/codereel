@@ -7,7 +7,7 @@ get '/' do
 end
 
 get '/code.html' do
-  get_github_cal
+  # get_github_cal
   erb :code
 end
 
@@ -17,6 +17,7 @@ end
 
 
 def get_github_cal
+  # sad that this is broken... what gives github api??
   calendar = Nokogiri::HTML(open('https://github.com/users/vipyne/contributions_calendar_data'))
   str = calendar.xpath('//p')
   arr = str.children.text

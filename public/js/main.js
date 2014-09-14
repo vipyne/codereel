@@ -131,12 +131,16 @@ hover.allIcons()
 /////////////////////////////
 /////////////////////////////
 
+var box = $('.box')
+addEvent('click', box, function(){
+  this.style.backgroundColor = '#ddd  '
+})
+
 
 
 // R E E L //////////////////
 /////////////////////////////
 /////////////////////////////
-  debugger
 
 var html5video = function(){
   return !!document.createElement('video').canPlayType
