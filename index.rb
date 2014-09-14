@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/code.html' do
-  getGithubCal
+  # getGithubCal
   erb :code
 end
 
