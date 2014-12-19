@@ -156,7 +156,6 @@ hover.allIcons()
 // R E E L //////////////////
 /////////////////////////////
 /////////////////////////////
-  debugger
 
 var html5video = function(){
   return !!document.createElement('video').canPlayType
