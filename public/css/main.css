@@ -76,6 +76,12 @@ img {
   display: inline-block;
 }
 
+.webglol {
+  transform: rotate(-0.30deg);
+  font-family: sans-serif;
+  text-align: left;
+}
+
 .logo {
   width: 100%;
   margin: 0 auto;
@@ -88,7 +94,7 @@ img {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 footer {
@@ -170,7 +176,6 @@ footer {
 #shot-list {
   text-align: center;
   font-family: arial;
-  font-size: 10px;
   letter-spacing: 4px;
   color: rgb(128,128,128);
 }
@@ -235,6 +240,14 @@ video {
 
 .left-align {
   text-align: left;
+}
+
+.bg {
+  background-image: url("../img/bg.png");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 

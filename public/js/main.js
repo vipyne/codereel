@@ -1,6 +1,8 @@
 var hiNerds = (function(){
-  console.log('hi nerds.  your reward for snooping here is a link to my super secret tumblr: http://gemintheruff.tumblr.com/')
-  console.log('also, i\'m silly: http://playvideo.herokuapp.com/')
+  console.log('hi nerds.  your reward for snooping here is a link to my super secret tumblr: http://gemintheruff.tumblr.com/');
+  console.log('also, i\'m silly: http://playvideo.herokuapp.com/');
+  console.log('check back soon for some sweet ascii art');
+
 })
 
 var all = (function(window, document, undefined){
@@ -54,8 +56,8 @@ var footer = (function(){
 var hover = (function(){
 
   // var host = 'http://localhost:4567/'
-  // var host = 'http://vanessa.rhymeswithart.com/'
-  var host = 'http://vanessapyne.herokuapp.com/'
+  var host = 'http://vanessa.rhymeswithart.com/'
+  // var host = 'http://vanessapyne.herokuapp.com/'
 
   var afterSrc = function(icon){
     var hover
