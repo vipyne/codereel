@@ -2,7 +2,7 @@
 browser compatibility, but woffs will do for now */
 @font-face {
   font-family: elephant;
-  src: url(ELEPHNT.woff);
+  src: url(MAXIMO__.woff);
 }
 
 body {
@@ -52,12 +52,18 @@ a:hover {
   display: table-cell;
   vertical-align: middle;
   position: relative;
-  width: 10px;
-  height: 200px;
+  margin-right: 14px;
+  width: 5px;
+  height: 100px;
 }
 
 #pipe {
   background-color: #000;
+}
+
+.pipe-space {
+  width: 35px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 img {
@@ -80,6 +86,7 @@ img {
   transform: rotate(-0.30deg);
   font-family: sans-serif;
   text-align: left;
+  font-size: 16px;
 }
 
 .logo {
@@ -123,7 +130,8 @@ footer {
 /*   *   *  INDEX  *   *   */
 
 .index {
-  margin: 60px 0 0;
+  transform: rotate(-0.99deg);
+  margin: 30px 0;
   left: 0;
   right: 0;
   z-index: 10000;
@@ -131,11 +139,12 @@ footer {
 
 .main {
   display: table-cell;
+  font-size: 60%;
 }
 
 #dyptic-reel,
 #dyptic-code {
-  letter-spacing: 0 !important;
+  letter-spacing: 40px !important;
 }
 
 
@@ -174,6 +183,7 @@ footer {
 
 #vimeo,
 #shot-list {
+  font-size: 16px;
   text-align: center;
   font-family: arial;
   letter-spacing: 4px;

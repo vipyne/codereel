@@ -23,41 +23,39 @@ var addEvent = function(theEvent, element, func){
 
 /////
 
-var footer = (function(){
+// var footer = (function(){
 
-  var $footer, footerHeight, pageHeight
+//   var $footer, footerHeight, pageHeight
 
-  var position = function(){
-    $footer = $('.social-media')
-    footerHeight = $('.social-media').height()
-    // pageHeight = $('.all-wrap').height() + 141 // need to figure out why
-    // this doesn't work on page load...
-    if($(window).height() > $('.all-wrap').height() + 141 + footerHeight){
-      $footer.css({
-        position: 'absolute'
-      }).animate({
-        top: $(window).scrollTop() + $(window).height() - footerHeight + 'px'
-      }, 1)
-    }else{
-      $footer.css({
-        position: 'static'
-      })
-    }
-  }
+//   var position = function(){
+//     $footer = $('.social-media')
+//     footerHeight = $('.social-media').height()
+//     // pageHeight = $('.all-wrap').height() + 141 // need to figure out why
+//     // this doesn't work on page load...
+//     if($(window).height() > $('.all-wrap').height() + 141 + footerHeight){
+//       $footer.css({
+//         position: 'absolute'
+//       }).animate({
+//         top: $(window).scrollTop() + $(window).height() - footerHeight + 'px'
+//       }, 1)
+//     }else{
+//       $footer.css({
+//         position: 'static'
+//       })
+//     }
+//   }
 
-  return {
-    position: position
-  }
+//   return {
+//     position: position
+//   }
 
-})()
+// })()
 
 /////
 
 var hover = (function(){
 
-  // var host = 'http://localhost:4567/'
-  var host = 'http://vanessa.rhymeswithart.com/'
-  // var host = 'http://vanessapyne.herokuapp.com/'
+  var host = ''
 
   var afterSrc = function(icon){
     var hover
@@ -116,10 +114,10 @@ var hover = (function(){
 
 /////
 
-footer.position()
-$(window)
-  .scroll(footer.position)
-  .resize(footer.position)
+// footer.position()
+// $(window)
+//   .scroll(footer.position)
+//   .resize(footer.position)
 
 hover.allIcons()
 
@@ -132,11 +130,6 @@ hover.allIcons()
 // C O D E //////////////////
 /////////////////////////////
 /////////////////////////////
-
-var box = $('.box')
-addEvent('click', box, function(){
-  this.style.backgroundColor = '#ddd  '
-})
 
 
 
