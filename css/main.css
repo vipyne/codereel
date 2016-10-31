@@ -30,6 +30,8 @@ ul {
 li {
   display: inline-block;
   margin: 0 5px;
+  transform: rotate(-0.99deg);
+
 }
 
 h2 {
@@ -131,7 +133,6 @@ footer {
 /*   *   *  INDEX  *   *   */
 
 .index {
-  transform: rotate(-0.99deg);
   margin: 30px 0;
   left: 0;
   right: 0;
@@ -254,7 +255,7 @@ video {
 }
 
 .bg {
-  background-image: linear-gradient( to top, #fffcef, #fffcef 5%, #e224a6 2%, #e224a6 7%, #e27024 2%, #e27024 9%, #e2d924 2%, #e2d924 11%, #9bb229 2%, #9bb229 13%, #24a3e2 2%, #24a3e2 15%, #fffcef 3%);
+  background-image: linear-gradient( to bottom, #e5e5e5, #e5e5e5 5%, #3c2960 2%, #3c2960 7%, #5b4193 2%, #5b4193 9%, #864fad 2%, #864fad 11%, #ae5dc6 2%, #ae5dc6 13%, #d664bb 2%, #d664bb 15%, #e5e5e5 3%);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -272,7 +273,7 @@ video {
 
 @media only screen and (max-width: 930px) {
   .index {
-    /*margin: -1% 0 0;*/
+    /*margin: -1% 0 0;   #e224a6   */
   }
   h2 {
     font-size: 11vw;
