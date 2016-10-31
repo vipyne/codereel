@@ -13,62 +13,34 @@ console.log('function hiNerds')
 /////////////////////////////
 /////////////////////////////
 
-// var c=document.getElementById("myCanvas");
-// var ctx=c.getContext("2d");
-
-// ctx.font="20px Georgia";
-// ctx.fillText("Hello World!",10,50);
-
-// ctx.font="30px Verdana";
-// // Create gradient
-// var gradient=ctx.createLinearGradient(0,0,c.width,0);
-// gradient.addColorStop("0","magenta");
-// gradient.addColorStop("0.5","blue");
-// gradient.addColorStop("1.0","red");
-// // Fill with gradient
-// ctx.fillStyle=gradient;
-// ctx.fillText("Big smile!",10,90);
-
-// ctx.beginPath();
-//                     ctx.arc(x,y, radius, 0, 2 * Math.PI, false);
-//                     ctx.clip();
-//                     ctx.drawImage(img,0,0,
-
 var textNameCanvas = document.createElement('canvas');
+textNameCanvas.style.position = 'absolute';
+textNameCanvas.style.margin = '60% 0 0';
+var bgInsert = document.getElementsByClassName('bg')[0];
+document.getElementsByClassName('main')[0].insertBefore(textNameCanvas, bgInsert);
 textNameCanvas.width = 300;
 textNameCanvas.height = 300;
 
 var textNameCanvasContext = textNameCanvas.getContext('2d');
 
 var dotMatrix = textNameCanvasContext;
-
-
-var rows = 5;
-var cols = 10
-
-
+dotMatrix.fillStyle = '#b2321e';
+var rows = 7
+var cols = 10;
+var radius = 6;
+var xIncrement = textNameCanvas.width/cols;
+var yIncrement = textNameCanvas.height/rows;
 
 for (var i = 1; i < rows; i++) {
   for (var j = 1; j < cols; j++) {
-    var center = [textNameCanvas.width/j, textNameCanvas.height/i];
+    var center = [xIncrement * j, yIncrement * i];
+    dotMatrix.beginPath(); // this effects rasteration... its interesting
     dotMatrix.moveTo(center[0], center[1]);
-    console.log('center', center);
-    dotMatrix.arc(center[0], center[1], 10, 0, (2 * Math.PI), false);
+    dotMatrix.arc(center[0], center[1], radius + j, 0, 2 * Math.PI, false);
     dotMatrix.fill();
+    dotMatrix.closePath();
   }
 }
-
-console.log('derp')
-
-// textNameCanvasContext.font = '30px Arial';
-// dotMatrix.beginPath();
-// dotMatrix.arc(10, 10, 7.5, 0, (2 * Math.PI), false);
-// dotMatrix.fillStyle = '#a5251c';
-// // dotMatrix.fillcolor('rgb(165, 37, 28)');
-// dotMatrix.fill();
-// // dotMatrix.fillStyle(dotMatrix);
-
-document.getElementsByClassName('main')[0].append(textNameCanvas);
 
 // L I N K S ////////////////
 /////////////////////////////
