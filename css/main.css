@@ -254,7 +254,7 @@ video {
 }
 
 .bg {
-  background-image: url("../img/bg.png");
+  background-image: linear-gradient( to top, #fffcef, #fffcef 5%, #e224a6 2%, #e224a6 7%, #e27024 2%, #e27024 9%, #e2d924 2%, #e2d924 11%, #9bb229 2%, #9bb229 13%, #24a3e2 2%, #24a3e2 15%, #fffcef 3%);
   height: 100%;
   width: 100%;
   position: absolute;
