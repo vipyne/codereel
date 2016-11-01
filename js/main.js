@@ -44,7 +44,7 @@ var textSize = sTextSize
 textNameCanvasContext.font = 'bold ' + sTextSize + 'px sans-serif'
 textNameCanvasContext.textBaseline = "middle";
 textNameCanvasContext.textAlign = "left";
-textNameCanvasContext.fillStyle = 'rgba(100,100,100,.01)'; // super high transparency
+textNameCanvasContext.fillStyle = 'rgba(100, 100, 100, 0.01)'; // super high transparency
 textNameCanvasContext.fillText('VP', xIncrement, sHeight/2);
 
 // is pixel inside a letter?
@@ -64,7 +64,6 @@ function pixelUsed(x, y) {
 dotMatrix.fillStyle = '#b2321e';
 for (var i = 1; i < rows; i++) {
   for (var j = 1; j < cols; j++) {
-    console.log('derp')
     var center = [xIncrement * j, yIncrement * i];
     if (pixelUsed(center[0], center[1])) {
       dotMatrix.beginPath(); // this effects rasteration... its interesting
@@ -76,23 +75,20 @@ for (var i = 1; i < rows; i++) {
   }
 }
 
-
+//     B G     //////////////
 // D U S T //////////////////
 /////////////////////////////
 /////////////////////////////
-
 var dustCanvas = document.createElement('canvas');
 dustCanvas.style.position = 'absolute';
-dustCanvas.width = window.screen.availWidth;
-dustCanvas.height = window.screen.availHeight;
-// dustCanvas.width = 300;
-// dustCanvas.height = 300;
+dustCanvas.width = window.innerWidth - 50;
+dustCanvas.height = window.innerHeight;
 var canvasW = dustCanvas.width;
 var canvasH = dustCanvas.height;
 var dustCanvasContext = dustCanvas.getContext('2d');
 document.getElementsByClassName('mainy')[0].insertBefore(dustCanvas, bgInsert);
 
-var randomTotal = Math.random() * (210 - 170) + 170;
+var randomTotal = Math.random() * (370 - 300) + 300;
 dustCanvasContext.strokeStyle = 'rgba(50, 50, 50, 0.03)';
 dustCanvasContext.globalCompositeOperation = 'darken';
 dustCanvasContext.lineCap = 'round';
@@ -115,22 +111,42 @@ for (var i = 0; i < randomTotal; i++) {
   dustCanvasContext.stroke();
 }
 
-
+//     B G     //////////////
 // C O R N E R //////////////
 /////////////////////////////
 /////////////////////////////
 
-// // dustCanvasContext.moveTo  TODO: make white corners to imitate rounded corners
-// // destination-atop
-// dustCanvasContext.beginPath();
-// dustCanvasContext.globalCompositeOperation = 'destination-atop';
+var roundedCornerDim = 200;
+var topCornerCanvas = document.createElement('canvas');
+topCornerCanvas.style.position = 'absolute';
+topCornerCanvas.width = roundedCornerDim;
+topCornerCanvas.height = roundedCornerDim;
+var topCornerCanvasContext = topCornerCanvas.getContext('2d');
+document.getElementsByClassName('mainy')[0].insertBefore(topCornerCanvas, bgInsert);
 
-// // dustCanvasContext.fillStyle = 'rgba(255, 255, 255, 255)';
-// // dustCanvasContext.fillRect(0, 0, 200, 200);
-// // dustCanvasContext.clip();
+topCornerCanvasContext.globalCompositeOperation = 'source-over';
+topCornerCanvasContext.shadowBlur = 0;
+topCornerCanvasContext.closePath();
+topCornerCanvasContext.moveTo(0, 0);
 
-// dustCanvasContext.moveTo(0, 0);
-// dustCanvasContext.arcTo(200, 200, 200, 0, Math.PI*2, false);
+topCornerCanvasContext.moveTo(0, 0);
+topCornerCanvasContext.arc(roundedCornerDim, roundedCornerDim, roundedCornerDim, 0, 2 * Math.PI, false);
+topCornerCanvasContext.clip();
+
+topCornerCanvasContext.fillStyle = 'rgba(255, 255, 255, 255)';
+topCornerCanvasContext.fillRect(0, 0, roundedCornerDim, roundedCornerDim);
+
+var cornerPixels = topCornerCanvasContext.getImageData(0, 0, roundedCornerDim, roundedCornerDim);
+var cPixel = cornerPixels.data;
+
+for (var i = 0, cPixelLength = cPixel.length; i+4 < cPixelLength; i += 4) {
+  cPixel[i] = 255;  // just make them all white...
+  cPixel[i + 1] = 255;
+  cPixel[i + 2] = 255;
+  cPixel[i + 3] = Math.abs(255 - cPixel[i + 3]); // only show the ones we want
+}
+topCornerCanvasContext.putImageData(cornerPixels, 0, 0);
+
 
 
 
