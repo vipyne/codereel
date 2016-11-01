@@ -23,9 +23,9 @@ var sTextSize = 300 / scale;
 
 var textNameCanvas = document.createElement('canvas');
 textNameCanvas.style.position = 'absolute';
-textNameCanvas.style.margin = '60% 0 0';
-var bgInsert = document.getElementsByClassName('bg')[0];
-document.getElementsByClassName('main')[0].insertBefore(textNameCanvas, bgInsert);
+textNameCanvas.style.margin = '50px 20px 200px';
+var bgInsert = document.getElementsByClassName('all-wrap')[0];
+document.getElementsByClassName('mainy')[0].insertBefore(textNameCanvas, bgInsert);
 textNameCanvas.width = sWidth;
 textNameCanvas.height = sHeight;
 var textNameCanvasContext = textNameCanvas.getContext('2d');
@@ -68,11 +68,61 @@ for (var i = 1; i < rows; i++) {
     if (pixelUsed(center[0], center[1])) {
       dotMatrix.beginPath(); // this effects rasteration... its interesting
       dotMatrix.moveTo(center[0], center[1]);
-      dotMatrix.arc(center[0], center[1], radius + j - 3, 0, 2 * Math.PI, false);
+      dotMatrix.arc(center[0], center[1], radius + j/2 - 2, 0, 2 * Math.PI, false);
       dotMatrix.fill();
       dotMatrix.closePath();
     }
   }
+}
+
+
+
+var dustCanvas = document.createElement('canvas');
+dustCanvas.style.position = 'absolute';
+dustCanvas.width = window.screen.availWidth;
+dustCanvas.height = window.screen.availHeight;
+var canvasW = dustCanvas.width;
+var canvasH = dustCanvas.height;
+var dustCanvasContext = dustCanvas.getContext('2d');
+document.getElementsByClassName('mainy')[0].insertBefore(dustCanvas, bgInsert);
+
+
+
+// // dustCanvasContext.moveTo  TODO: make white corners to imitate rounded corners
+// // destination-atop
+// dustCanvasContext.beginPath();
+// // dustCanvasContext.globalCompositeOperation = 'destination-atop';
+
+// // dustCanvasContext.fillStyle = 'rgba(255, 255, 255, 255)';
+// // dustCanvasContext.fillRect(0, 0, 200, 200);
+// // dustCanvasContext.clip();
+
+// dustCanvasContext.moveTo(0, 0);
+// dustCanvasContext.arcTo(200, 200, 200, 0, Math.PI*2, false);
+
+
+
+var randomTotal = Math.random() * (200 - 100) + 100;
+
+for (var i = 0; i < randomTotal; i++) {
+dustCanvasContext.strokeStyle = 'rgba(50,50,50,.05';
+
+  var randomStartX = Math.random() * canvasW;
+  var randomEndX = Math.random() * (randomStartX - (randomStartX - 10)) + (randomStartX - 10);
+  var randomStartY = Math.random() * canvasH;
+  var randomEndY = Math.random() * (randomStartY - (randomStartY - 10)) + (randomStartY - 10);
+  var radius = Math.random() * 40;
+  var strokeWidth = Math.random() * 4;
+// debugger
+  dustCanvasContext.shadowColor = 'rgba(50,50,50,10';
+  dustCanvasContext.shadowBlur = 10;
+  dustCanvasContext.beginPath();
+  dustCanvasContext.moveTo(randomStartX, randomStartY);
+  dustCanvasContext.lineTo(randomEndX, randomEndY);
+  // dustCanvasContext.arcTo(randomStartX, randomStartY, randomEndX, randomEndY, radius);
+  dustCanvasContext.lineWidth = strokeWidth;
+  dustCanvasContext.closePath();
+  dustCanvasContext.stroke();
 }
 
 

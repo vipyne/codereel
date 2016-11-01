@@ -7,7 +7,6 @@ browser compatibility, but woffs will do for now */
 }
 
 body {
-  position: absolute;
   color: #000;
   margin: 0;
   padding: 0;
@@ -16,6 +15,13 @@ body {
   font-family: elephant;
   font-variant: small-caps;
   letter-spacing: 3px;
+  background-image: linear-gradient( to bottom, #e5e5e5, #e5e5e5 310px,
+    #d664bb 310px, #d664bb 360px,
+    #ae5dc6 360px, #ae5dc6 410px,
+    #864fad 410px, #864fad 460px,
+    #5b4193 460px, #5b4193 510px,
+    #3c2960 510px, #3c2960 560px,
+    #3c2960 560px);
 }
 
 section {
@@ -67,6 +73,10 @@ a:hover {
 .pipe-space {
   width: 35px;
   background-color: rgba(0, 0, 0, 0);
+}
+
+.all-wrap {
+  padding-top: 520px;
 }
 
 img {
