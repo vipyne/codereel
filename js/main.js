@@ -105,7 +105,8 @@ document.getElementsByClassName('mainy')[0].insertBefore(dustCanvas, bgInsert);
 var randomTotal = Math.random() * (200 - 100) + 100;
 
 for (var i = 0; i < randomTotal; i++) {
-dustCanvasContext.strokeStyle = 'rgba(50,50,50,.05';
+dustCanvasContext.strokeStyle = 'rgba(250, 250, 250, 0.05)';
+// dustCanvasContext.strokeStyle = 'rgba(250, 250, 250, 0.05';
 
   var randomStartX = Math.random() * canvasW;
   var randomEndX = Math.random() * (randomStartX - (randomStartX - 10)) + (randomStartX - 10);
@@ -114,7 +115,7 @@ dustCanvasContext.strokeStyle = 'rgba(50,50,50,.05';
   var radius = Math.random() * 40;
   var strokeWidth = Math.random() * 4;
 // debugger
-  dustCanvasContext.shadowColor = 'rgba(50,50,50,10';
+  dustCanvasContext.shadowColor = 'rgba(250, 250, 250, 10)';
   dustCanvasContext.shadowBlur = 10;
   dustCanvasContext.beginPath();
   dustCanvasContext.moveTo(randomStartX, randomStartY);
