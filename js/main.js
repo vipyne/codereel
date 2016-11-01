@@ -13,34 +13,69 @@ console.log('function hiNerds')
 /////////////////////////////
 /////////////////////////////
 
+var scale = 1;
+var sWidth = 435 / scale;
+var sHeight = 250 / scale;
+var sRadius = 6 / scale;
+var sRows = 11 / scale;
+var sCols = 15 / scale;
+var sTextSize = 300 / scale;
+
 var textNameCanvas = document.createElement('canvas');
 textNameCanvas.style.position = 'absolute';
 textNameCanvas.style.margin = '60% 0 0';
 var bgInsert = document.getElementsByClassName('bg')[0];
 document.getElementsByClassName('main')[0].insertBefore(textNameCanvas, bgInsert);
-textNameCanvas.width = 300;
-textNameCanvas.height = 300;
-
+textNameCanvas.width = sWidth;
+textNameCanvas.height = sHeight;
 var textNameCanvasContext = textNameCanvas.getContext('2d');
 
 var dotMatrix = textNameCanvasContext;
+// var rows = sRows;
+// var cols = sCols;
+var rows = 11;
+var cols = 15;
+var radius = sRadius;
+var xIncrement = sWidth/cols;
+var yIncrement = sHeight/rows;
+
+// V P text
+var textSize = sTextSize
+textNameCanvasContext.font = 'bold ' + sTextSize + 'px sans-serif'
+textNameCanvasContext.textBaseline = "middle";
+textNameCanvasContext.textAlign = "left";
+textNameCanvasContext.fillStyle = 'rgba(100,100,100,.01)';
+textNameCanvasContext.fillText('VP', xIncrement, sHeight/2);
+
+function pixelUsed(x, y) {
+  var textPixels = textNameCanvasContext.getImageData(x, y, sWidth, sHeight);
+  var pixel = textPixels.data;
+
+  for (var i = 0, pixelLength = pixel.length; i < pixelLength; i += 4) {
+    if ( pixel[i + 3] !== 0) {
+      return true;
+    }
+    return false;
+  }
+}
+
+// dots color
 dotMatrix.fillStyle = '#b2321e';
-var rows = 7
-var cols = 10;
-var radius = 6;
-var xIncrement = textNameCanvas.width/cols;
-var yIncrement = textNameCanvas.height/rows;
 
 for (var i = 1; i < rows; i++) {
   for (var j = 1; j < cols; j++) {
     var center = [xIncrement * j, yIncrement * i];
-    dotMatrix.beginPath(); // this effects rasteration... its interesting
-    dotMatrix.moveTo(center[0], center[1]);
-    dotMatrix.arc(center[0], center[1], radius + j, 0, 2 * Math.PI, false);
-    dotMatrix.fill();
-    dotMatrix.closePath();
+    if (pixelUsed(center[0], center[1])) {
+      dotMatrix.beginPath(); // this effects rasteration... its interesting
+      dotMatrix.moveTo(center[0], center[1]);
+      dotMatrix.arc(center[0], center[1], radius + j - 3, 0, 2 * Math.PI, false);
+      dotMatrix.fill();
+      dotMatrix.closePath();
+    }
   }
 }
+
+
 
 // L I N K S ////////////////
 /////////////////////////////

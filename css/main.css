@@ -180,7 +180,7 @@ footer {
 
 .github-streak {
   text-align: center !important;
-  padding: 10px, 0;
+  padding: 10px 0;
 }
 
 #vimeo,
@@ -255,7 +255,7 @@ video {
 }
 
 .bg {
-  background-image: linear-gradient( to bottom, #e5e5e5, #e5e5e5 5%, #3c2960 2%, #3c2960 7%, #5b4193 2%, #5b4193 9%, #864fad 2%, #864fad 11%, #ae5dc6 2%, #ae5dc6 13%, #d664bb 2%, #d664bb 15%, #e5e5e5 3%);
+  background-image: linear-gradient( to top, #3c2960, #3c2960 5%, #3c2960 2%, #3c2960 7%, #5b4193 2%, #5b4193 9%, #864fad 2%, #864fad 11%, #ae5dc6 2%, #ae5dc6 13%, #d664bb 2%, #d664bb 15%, #e5e5e5 3%);
   height: 100%;
   width: 100%;
   position: absolute;
