@@ -22,10 +22,11 @@ var sCols = 15 / scale;
 var sTextSize = 300 / scale;
 
 var textNameCanvas = document.createElement('canvas');
-textNameCanvas.style.position = 'absolute';
-textNameCanvas.style.margin = '50px 20px 200px';
-var bgInsert = document.getElementsByClassName('all-wrap')[0];
-document.getElementsByClassName('mainy')[0].insertBefore(textNameCanvas, bgInsert);
+textNameCanvas.setAttribute('class', 'header-float');
+// textNameCanvas.style.position = 'absolute';
+textNameCanvas.style.margin = '50px 50px 0';
+var bgInsert = document.getElementsByClassName('social-media')[0];
+document.getElementById('header').insertBefore(textNameCanvas, bgInsert);
 textNameCanvas.width = sWidth;
 textNameCanvas.height = sHeight;
 var textNameCanvasContext = textNameCanvas.getContext('2d');
@@ -79,14 +80,18 @@ for (var i = 1; i < rows; i++) {
 // D U S T //////////////////
 /////////////////////////////
 /////////////////////////////
+
+var headerBefore = document.getElementById('header');
+
 var dustCanvas = document.createElement('canvas');
+dustCanvas.setAttribute('id', 'dusty');
 dustCanvas.style.position = 'absolute';
 dustCanvas.width = window.innerWidth - 50;
 dustCanvas.height = window.innerHeight;
 var canvasW = dustCanvas.width;
 var canvasH = dustCanvas.height;
 var dustCanvasContext = dustCanvas.getContext('2d');
-document.getElementsByClassName('mainy')[0].insertBefore(dustCanvas, bgInsert);
+document.getElementsByClassName('mainy')[0].insertBefore(dustCanvas, headerBefore);
 
 var randomTotal = Math.random() * (370 - 300) + 300;
 dustCanvasContext.strokeStyle = 'rgba(50, 50, 50, 0.03)';
@@ -122,7 +127,7 @@ topCornerCanvas.style.position = 'absolute';
 topCornerCanvas.width = roundedCornerDim;
 topCornerCanvas.height = roundedCornerDim;
 var topCornerCanvasContext = topCornerCanvas.getContext('2d');
-document.getElementsByClassName('mainy')[0].insertBefore(topCornerCanvas, bgInsert);
+document.getElementsByClassName('mainy')[0].insertBefore(topCornerCanvas, headerBefore);
 
 topCornerCanvasContext.globalCompositeOperation = 'source-over';
 topCornerCanvasContext.shadowBlur = 0;

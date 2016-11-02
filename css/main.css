@@ -7,7 +7,7 @@ browser compatibility, but woffs will do for now */
 }
 
 body {
-  color: #000;
+  color: #e5e5e5;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -37,7 +37,6 @@ li {
   display: inline-block;
   margin: 0 5px;
   transform: rotate(-0.99deg);
-
 }
 
 h2 {
@@ -49,12 +48,12 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #ae5dc6;
   font-size: 100%;
 }
 
 a:hover {
-  color: rgb(24,214,167);
+  color: #d664bb;
 }
 
 #pipe, h2 {
@@ -66,17 +65,13 @@ a:hover {
   height: 100px;
 }
 
-#pipe {
-  background-color: #000;
-}
-
 .pipe-space {
   width: 35px;
   background-color: rgba(0, 0, 0, 0);
 }
 
 .all-wrap {
-  padding-top: 520px;
+  padding-top: 290px;
 }
 
 img {
@@ -112,14 +107,23 @@ img {
 
 .social-media {
   width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  margin-right: 25px;
+  text-align: right;
   /*visibility: hidden;*/
 }
 
-footer {
-  height: 5em;
-  margin-top: .5em;
+.social {
+  margin: 0;
+}
+
+.header-float {
+  display: inline-block;
+  margin-top: 252px;
+}
+
+.all-social-icons {
+  width: 100%;
+  display: inline-flex;
 }
 
 .invisible {
@@ -135,7 +139,7 @@ footer {
 }
 
 .content {
-  text-align: center;
+  text-align: left;
 }
 
 
@@ -165,7 +169,7 @@ footer {
 
 .code {
   position: relative;
-  margin: 30px auto;
+  margin: 10px auto 30px;
 }
 
 .code-list {
@@ -195,16 +199,17 @@ footer {
 
 #vimeo,
 #shot-list {
+  transform: rotate(-0.99deg);
   font-size: 16px;
   text-align: center;
-  font-family: arial;
+  font-family: sans-serif;
   letter-spacing: 4px;
-  color: rgb(128,128,128);
+  color: #ae5dc6;
 }
 
 #vimeo:hover,
 #shot-list:hover {
-  color: rgb(24,214,167);
+  color: #d664bb;
 }
 
 .site {
@@ -222,7 +227,7 @@ footer {
 
 .limit {
   max-width: 650px;
-  margin: 0 auto;
+  margin-left: 102px;
 }
 
 /*   *   *   REEL   *   *   */
@@ -237,7 +242,7 @@ video {
 }
 
 .video-reel {
-  margin: 20px auto 0;
+  margin: 25px 0 0 102px;
   max-height: 540px;
   max-width: 960px;
 }
@@ -270,6 +275,10 @@ video {
   width: 100%;
   position: absolute;
   z-index: -1;
+}
+
+.credit {
+  color: rgba(130, 130, 130, 255);
 }
 
 
