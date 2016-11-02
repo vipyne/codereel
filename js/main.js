@@ -23,7 +23,7 @@ var sTextSize = 300 / scale;
 
 var textNameCanvas = document.createElement('canvas');
 textNameCanvas.setAttribute('class', 'header-float');
-// textNameCanvas.style.position = 'absolute';
+textNameCanvas.style.position = 'absolute';
 textNameCanvas.style.margin = '50px 50px 0';
 var bgInsert = document.getElementsByClassName('social-media')[0];
 document.getElementById('header').insertBefore(textNameCanvas, bgInsert);
