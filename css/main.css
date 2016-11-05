@@ -5,8 +5,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: monospace;
-  font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: -1.35px;
   background-image: linear-gradient( to bottom, #e5e5e5, #e5e5e5 310px,
     #d664bb 310px, #d664bb 360px,
     #ae5dc6 360px, #ae5dc6 410px,
@@ -49,7 +48,7 @@ a:hover {
 }
 
 .all-wrap {
-  padding-top: 290px;
+  padding: 240px 0 20px;
 }
 
 img {
@@ -60,6 +59,7 @@ img {
 
 .webglol {
   transform: rotate(-0.30deg);
+  margin-bottom: 40px;
   text-align: left;
   font-size: 16px;
 }
@@ -101,7 +101,7 @@ img {
 
 .code {
   position: relative;
-  margin: 10px auto 30px;
+  margin: 10px auto 0;
 }
 
 .limit {
@@ -117,5 +117,5 @@ img {
 }
 
 .credit {
-  color: rgba(130, 130, 130, 255);
+  color: #5b4193;
 }
