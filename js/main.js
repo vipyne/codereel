@@ -2,7 +2,6 @@ var hiNerds = (function(){
   console.log('hi nerds.  your reward for snooping here is a link to my super secret tumblr: http://gemintheruff.tumblr.com/');
   console.log('also, i\'m silly: http://playvideo.herokuapp.com/');
   console.log('check back soon for some sweet ascii art');
-
 })
 
 var all = (function(window, document, undefined){
@@ -62,8 +61,12 @@ function pixelUsed(x, y) {
 }
 
 // iterate and draw dots !
-dotMatrix.fillStyle = '#b2321e';
+// dotMatrix.fillStyle = '#b2321e'; // maroon
+
+var dotColor = ['#e5e5e5','#d664bb','#ae5dc6','#864fad','#5b4193','#3c2960'];
+
 for (var i = 1; i < rows; i++) {
+  dotMatrix.fillStyle = dotColor[i];
   for (var j = 1; j < cols; j++) {
     var center = [xIncrement * j, yIncrement * i];
     if (pixelUsed(center[0], center[1])) {
@@ -129,6 +132,7 @@ topCornerCanvas.height = roundedCornerDim;
 var topCornerCanvasContext = topCornerCanvas.getContext('2d');
 document.getElementsByClassName('mainy')[0].insertBefore(topCornerCanvas, headerBefore);
 
+
 topCornerCanvasContext.globalCompositeOperation = 'source-over';
 topCornerCanvasContext.shadowBlur = 0;
 topCornerCanvasContext.closePath();
@@ -153,13 +157,30 @@ for (var i = 0, cPixelLength = cPixel.length; i+4 < cPixelLength; i += 4) {
 topCornerCanvasContext.putImageData(cornerPixels, 0, 0);
 
 
+// var bottomCornerCanvas = document.createElement('canvas');
+// bottomCornerCanvas.style.position = 'relative';
+// bottomCornerCanvas.style.margin = '40px';
+// bottomCornerCanvas.width = roundedCornerDim + 100;
+// bottomCornerCanvas.height = roundedCornerDim + 100;
+// var bottomCornerCanvasContext = bottomCornerCanvas.getContext('2d');
 
+// bottomCornerCanvasContext.translate(bottomCornerCanvas.width / 2, bottomCornerCanvas.height / 2);
+// bottomCornerCanvasContext.rotate(Math.PI / 4);
+
+// document.getElementById('header').insertBefore(bottomCornerCanvas, textNameCanvas);
+
+// var derp = cornerPixels.data.slice(0);
+
+// var bottomCornerPixels = bottomCornerCanvasContext.getImageData(0, 0, roundedCornerDim, roundedCornerDim);
+// bottomCornerPixels.data = derp;
+
+// bottomCornerCanvasContext.putImageData(bottomCornerPixels, 0, 0);
 
 // L I N K S ////////////////
 /////////////////////////////
 /////////////////////////////
 
-// todo: site source
+// todo: sight source
 var addEvent = function(theEvent, element, func){
   if(element.addEventListener){
     element.addEventListener(theEvent, func, false)
@@ -173,10 +194,11 @@ var hover = (function(){
     var hover
     var id = icon.getAttribute('id')
     var hoverIcons = {
-      'github': 'img/github-after.png',
-      'twitter': 'img/twitter-after.png',
-      'linkedin': 'img/linkedin-after.png',
-      'instagram': 'img/instagram-after.png'
+      'github': 'img/github-hover.png',
+      'twitter': 'img/twitter-hover.png',
+      'linkedin': 'img/linkedin-hover.png',
+      'instagram': 'img/instagram-hover.png',
+      'tumblr': 'img/tumblr-hover.png'
     }
     hover = hoverIcons[id]
     return host + hover
@@ -186,10 +208,11 @@ var hover = (function(){
     var img
     var id = icon.getAttribute('id')
     var hoverIcons = {
-      'github': 'img/github-before.png',
-      'twitter': 'img/twitter-before.png',
-      'linkedin': 'img/linkedin-before.png',
-      'instagram': 'img/instagram-before.png'
+      'github': 'img/github.png',
+      'twitter': 'img/twitter.png',
+      'linkedin': 'img/linkedin.png',
+      'instagram': 'img/instagram.png',
+      'tumblr': 'img/tumblr.png'
     }
     img = hoverIcons[id]
     return host + img
@@ -205,16 +228,16 @@ var hover = (function(){
   }
 
   var allIcons = function(){
-    var githubs = document.getElementsByClassName('github')
     var github = document.getElementById('github')
     var twitter = document.getElementById('twitter')
     var linkedin = document.getElementById('linkedin')
     var instagram = document.getElementById('instagram')
+    var tumblr = document.getElementById('tumblr')
     hoverEvent(github)
-    hoverEvent(githubs)
     hoverEvent(twitter)
     hoverEvent(linkedin)
     hoverEvent(instagram)
+    hoverEvent(tumblr)
     $('.social-media').css('visibility', 'visible')
   }
 
@@ -225,33 +248,6 @@ var hover = (function(){
 })()
 
 hover.allIcons()
-
-// I N D E X ////////////////
-/////////////////////////////
-/////////////////////////////
-
-
-
-// C O D E //////////////////
-/////////////////////////////
-/////////////////////////////
-
-
-
-// R E E L //////////////////
-/////////////////////////////
-/////////////////////////////
-
-var html5video = function(){
-  return !!document.createElement('video').canPlayType
-}
-if(!html5video()){
-  var v = $('.video-reel')
-  var fallbackLink = document.createElement('p')
-  fallbackLink.innerHTML = 'your browser does not support the HTML5 video tag :( check out my reel on'
-    // <a href="http://vimeo.com/99774169">vimeo</a>
-  v.append(fallbackLink)
-}
 
 /////////////////////////////
 })(window, document)
