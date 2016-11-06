@@ -14,9 +14,14 @@ console.log('function hiNerds')
 
 var scale = 1;
 var sWidth = 435 / scale;
-var sHeight = 250 / scale;
+var sHeight = 260 / scale;
 var sRadius = 6 / scale;
-var sTextSize = 300 / scale;
+var sTextSize = 314 / scale;
+// var sTextSize = 320 / scale;
+// var rows = 15;
+// var cols = 26;
+var rows = 11;
+var cols = 19;
 
 var textNameCanvas = document.createElement('canvas');
 textNameCanvas.setAttribute('class', 'header-float');
@@ -29,19 +34,15 @@ textNameCanvas.height = sHeight;
 var textNameCanvasContext = textNameCanvas.getContext('2d');
 
 var dotMatrix = textNameCanvasContext;
-var rows = 15;
-var cols = 26;
 var radius = sRadius;
 var xIncrement = sWidth/cols;
 var yIncrement = sHeight/rows;
 // V P text
-var textSize = sTextSize
-// textNameCanvasContext.font = 'bold ' + sTextSize + 'px serif'
-textNameCanvasContext.font = 'bold ' + '3' + 'px monospace'
-textNameCanvasContext.font = 'bold ' + sTextSize + 'px sans-serif'
+var textSize = sTextSize;
+textNameCanvasContext.font = 'bold ' + sTextSize + 'px sans-serif';
 textNameCanvasContext.textBaseline = "middle";
 textNameCanvasContext.textAlign = "left";
-textNameCanvasContext.fillStyle = 'rgba(100, 100, 100, 0.01)'; // super high transparency
+textNameCanvasContext.fillStyle = 'rgba(250, 250, 250, 0.01)'; // super high transparency
 textNameCanvasContext.fillText('VP', xIncrement, sHeight/2);
 // is pixel inside a letter?
 function pixelUsed(x, y) {
@@ -49,7 +50,7 @@ function pixelUsed(x, y) {
   var pixel = textPixels.data;
 
   for (var i = 0, pixelLength = pixel.length; i < pixelLength; i += 4) {
-    if ( pixel[i + 3] !== 0) {
+    if ( pixel[i + 2] > 250) {
       return true;
     }
     return false;
@@ -57,7 +58,7 @@ function pixelUsed(x, y) {
 }
 // iterate and draw dots !
 // dotMatrix.fillStyle = '#b2321e'; // maroon
-var dotColor = ['#e5e5e5','#d664bb','#ae5dc6','#864fad','#5b4193','#3c2960'];
+var dotColor = ['#d664bb','#d664bb','#ae5dc6','#864fad','#864fad','#5b4193','#3c2960'];
 
 for (var i = 1; i < rows; i++) {
   dotMatrix.fillStyle = dotColor[i];
@@ -66,7 +67,7 @@ for (var i = 1; i < rows; i++) {
     if (pixelUsed(center[0], center[1])) {
       dotMatrix.beginPath(); // this effects rasteration... its interesting
       dotMatrix.moveTo(center[0], center[1]);
-      dotMatrix.arc(center[0], center[1], radius + j/3 - 5, 0, 2 * Math.PI, false);
+      dotMatrix.arc(center[0], center[1], radius + j/1.8 - 5, 0, 2 * Math.PI, false);
       dotMatrix.fill();
       dotMatrix.closePath();
     }
