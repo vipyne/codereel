@@ -255,5 +255,21 @@ var hover = (function(){
 
 hover.allIcons()
 
+// G I F S //////////////////
+/////////////////////////////
+/////////////////////////////
+
+var gifHolder = document.getElementsByClassName('gif')[0];
+var marquee = document.getElementById('marquee');
+
+addEvent('mouseover', marquee, function(){
+  gifHolder.src = './img/marquee.gif';
+  gifHolder.style.visibility = 'visible';
+})
+addEvent('mouseout', marquee, function(){
+  gifHolder.style.visibility = 'hidden';
+  gifHolder.src = '';
+})
+
 /////////////////////////////
 })(window, document)

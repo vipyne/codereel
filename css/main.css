@@ -47,6 +47,17 @@ a:hover {
   color: #d664bb;
 }
 
+.gif-holder {
+  position: absolute;
+  margin-left: 51%;
+  z-index: 5;
+  visibility: hidden;
+}
+
+.gif {
+  margin-top: -134px;
+}
+
 .all-wrap {
   padding: 240px 0 20px;
 }
