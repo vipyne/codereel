@@ -51,16 +51,20 @@ a:hover {
   position: absolute;
   margin-left: 51%;
   z-index: 5;
-  visibility: hidden;
+  /*display: none;*/
+  /*visibility: hidden;*/
 }
 
 .gif {
   margin-top: -134px;
-  border-radius: 40px;
-  overflow: hidden;
+  /*border-radius: 40px;*/
+  /*overflow: hidden;*/
+  clip-path: circle(150px 30px 50px);
 }
 
 .repo-image-canvas {
+  margin-top: -134px;
+  position: absolute;
   z-index: 10;
 }
 

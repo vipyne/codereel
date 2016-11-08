@@ -258,14 +258,22 @@ hover.allIcons()
 // G I F S //////////////////
 /////////////////////////////
 /////////////////////////////
+
+var repoImageCanvas = document.createElement('canvas');
+repoImageCanvas.style.position = 'absolute';
+repoImageCanvas.width = 300;
+repoImageCanvas.height = 300;
+var repoImageCanvasContext = repoImageCanvas.getContext('2d');
+repoImageCanvas.className = 'repo-image-canvas';
+document.getElementsByClassName('gif-holder')[0].insertBefore(repoImageCanvas, document.getElementsByClassName('gif')[0]);
+
 var gifPicLinks = (function() {
   var gifHolder = document.getElementsByClassName('gif')[0];
-  // var gifCanvas = document.getElementsByClassName('gif')[0];
   var linkPics = function(link) {
     var id = link.getAttribute('id');
     var pics = {
       'marquee' : './img/marquee.gif',
-      'targa'   : './img/targa-1.png',
+      'targa'   : './img/targa.png',
       'webglol' : './img/webglol.gif',
       'shader' : './img/shader.png'
     }
@@ -273,27 +281,42 @@ var gifPicLinks = (function() {
   }
 
   var makeImageTheSource = function(link) {
-    var repoImageCanvas = document.getElementsByClassName('repo-image-canvas')[0];
-    var repoImageCanvasContext = repoImageCanvas.getContext('2d');
     var img = document.getElementsByClassName('gif')[0];
+    repoImageCanvas.width = img.width;
+    repoImageCanvas.length = img.length;
     repoImageCanvasContext.drawImage(img, 0, 0);
+    var imgData = repoImageCanvasContext.getImageData(0, 0, 300, 300);
+    imageFilter(imgData);
   };
 
-  var imageFilter = function() {
+  var imageFilter = function(imgData) {
+    repoImageCanvasContext.arc(150, 150, 35, 0, 2 * Math.PI, false);
+    repoImageCanvasContext.clip();
 
+    var imageData = imgData.data;
+    console.log('imgData.width', imgData.width)
+    console.log('imageData.length', imageData.length)
+    for (var i = 0; i + 4 < imageData.length; i += 4) {
+      imageData[i] += 20;
+      // imageData[i + 1] = 100;
+      imageData[i + 2] += 20;
+      // imageData[i + 3] = 255;
+    }
+    repoImageCanvasContext.drawImage(imgData, 0, 0);
+    // repoImageCanvasContext.putImageData(imgData, 0, 0);
   };
 
   var hovering = function(hyperlink) {
-    addEvent('mouseover', hyperlink, function(){
-      gifHolder.src = linkPics(hyperlink);
-      gifHolder.style.visibility = 'visible';
+    // addEvent('mouseover', hyperlink, function(){
+      // gifHolder.src = linkPics(hyperlink);
+      // gifHolder.style.visibility = 'visible';
       // gifHolder.style.display = 'none';
-      // makeImageTheSource(hyperlink);
-    });
-    addEvent('mouseout', hyperlink, function(){
-      gifHolder.style.visibility = 'hidden';
-      gifHolder.src = '';
-    });
+      makeImageTheSource(hyperlink);
+    // });
+    // addEvent('mouseout', hyperlink, function(){
+    //   gifHolder.style.visibility = 'hidden';
+    //   gifHolder.src = '';
+    // });
   };
 
   var allLinks = function() {
