@@ -56,6 +56,12 @@ a:hover {
 
 .gif {
   margin-top: -134px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.repo-image-canvas {
+  z-index: 10;
 }
 
 .all-wrap {

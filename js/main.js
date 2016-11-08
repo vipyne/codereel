@@ -258,18 +258,62 @@ hover.allIcons()
 // G I F S //////////////////
 /////////////////////////////
 /////////////////////////////
+var gifPicLinks = (function() {
+  var gifHolder = document.getElementsByClassName('gif')[0];
+  // var gifCanvas = document.getElementsByClassName('gif')[0];
+  var linkPics = function(link) {
+    var id = link.getAttribute('id');
+    var pics = {
+      'marquee' : './img/marquee.gif',
+      'targa'   : './img/targa-1.png',
+      'webglol' : './img/webglol.gif',
+      'shader' : './img/shader.png'
+    }
+    return pics[id];
+  }
 
-var gifHolder = document.getElementsByClassName('gif')[0];
-var marquee = document.getElementById('marquee');
+  var makeImageTheSource = function(link) {
+    var repoImageCanvas = document.getElementsByClassName('repo-image-canvas')[0];
+    var repoImageCanvasContext = repoImageCanvas.getContext('2d');
+    var img = document.getElementsByClassName('gif')[0];
+    repoImageCanvasContext.drawImage(img, 0, 0);
+  };
 
-addEvent('mouseover', marquee, function(){
-  gifHolder.src = './img/marquee.gif';
-  gifHolder.style.visibility = 'visible';
-})
-addEvent('mouseout', marquee, function(){
-  gifHolder.style.visibility = 'hidden';
-  gifHolder.src = '';
-})
+  var imageFilter = function() {
+
+  };
+
+  var hovering = function(hyperlink) {
+    addEvent('mouseover', hyperlink, function(){
+      gifHolder.src = linkPics(hyperlink);
+      gifHolder.style.visibility = 'visible';
+      // gifHolder.style.display = 'none';
+      // makeImageTheSource(hyperlink);
+    });
+    addEvent('mouseout', hyperlink, function(){
+      gifHolder.style.visibility = 'hidden';
+      gifHolder.src = '';
+    });
+  };
+
+  var allLinks = function() {
+    var marquee = document.getElementById('marquee');
+    var targa = document.getElementById('targa');
+    var webglol = document.getElementById('webglol');
+    var shader = document.getElementById('shader');
+    hovering(marquee);
+    hovering(targa);
+    hovering(webglol);
+    hovering(shader);
+  }
+
+  return {
+    allLinks : allLinks
+  };
+
+})();
+
+gifPicLinks.allLinks();
 
 /////////////////////////////
 })(window, document)
