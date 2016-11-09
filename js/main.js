@@ -203,7 +203,7 @@ var hover = (function(){
       'github': 'img/github-hover.png',
       'twitter': 'img/twitter-hover.png',
       'linkedin': 'img/linkedin-hover.png',
-      'instagram': 'img/instagram-hover.png',
+      // 'instagram': 'img/instagram-hover.png',
       'tumblr': 'img/tumblr-hover.png'
     }
     hover = hoverIcons[id]
@@ -217,7 +217,7 @@ var hover = (function(){
       'github': 'img/github.png',
       'twitter': 'img/twitter.png',
       'linkedin': 'img/linkedin.png',
-      'instagram': 'img/instagram.png',
+      // 'instagram': 'img/instagram.png',
       'tumblr': 'img/tumblr.png'
     }
     img = hoverIcons[id]
@@ -237,12 +237,12 @@ var hover = (function(){
     var github = document.getElementById('github')
     var twitter = document.getElementById('twitter')
     var linkedin = document.getElementById('linkedin')
-    var instagram = document.getElementById('instagram')
+    // var instagram = document.getElementById('instagram')
     var tumblr = document.getElementById('tumblr')
     hoverEvent(github)
     hoverEvent(twitter)
     hoverEvent(linkedin)
-    hoverEvent(instagram)
+    // hoverEvent(instagram)
     hoverEvent(tumblr)
     // $('.social-media').css('visibility', 'visible')
   }
