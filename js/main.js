@@ -8,6 +8,8 @@ var all = (function(window, document, undefined){
 console.log('function hiNerds')
 /////////////////////////////
 
+window.location = '#';
+
 // V P   D O T S ////////////
 /////////////////////////////
 /////////////////////////////
@@ -314,6 +316,33 @@ var gifPicLinks = (function() {
 })();
 
 gifPicLinks.allLinks();
+
+// S U B L I M I N A L //////
+/////////////////////////////
+/////////////////////////////
+// var waitTime = Math.random() * (4000 - 2000) + 2000;
+// var secondWaitTime = Math.random() * (2000 - 1000) - 1000;
+var waitTime = 1500;
+var secondWaitTime = 1500;
+
+setTimeout( function subliminalMessage() {
+  window.location = '#                                                                                       hey';
+  setTimeout( function removeSubliminalMessage() {
+    window.location = '#';
+    setTimeout( function secondMessage() {
+      window.location = '#                                                                         i\'m stuck in the internet';
+      setTimeout( function removeSecondSubliminalMessage() {
+        window.location = '#';
+        setTimeout( function secondMessage() {
+          window.location = '#                                                                              help me escape!';
+          setTimeout( function removeSecondSubliminalMessage() {
+            window.location = '#';
+          }, 3000);
+        }, waitTime);
+      }, 3000);
+    }, secondWaitTime);
+  }, 2000);
+}, 6000);
 
 /////////////////////////////
 })(window, document)
