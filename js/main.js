@@ -1,15 +1,16 @@
 // <script type="text/javascript" src="githubbbbb" initials="<your initials here>"></script>
-var vip = 'wvfs';
+var vip = 'mvp';
 
 var all = (function(window, document, undefined){
 
 var scale = 1;
 var sWidth = 435 / scale;
 var sHeight = 220 / scale;
-var sRadius = 6 / scale;
+var sRadius = 3.5 / scale;
 var sRows = 11 / scale;
 var sCols = 15 / scale;
 var sTextSize = 370 / scale;
+
 
 var textNameCanvas = document.createElement('canvas');
 textNameCanvas.setAttribute('class', 'header-float');
@@ -23,13 +24,14 @@ var textNameCanvasContext = textNameCanvas.getContext('2d');
 
 var dotMatrix = textNameCanvasContext;
 
+
 // V P text
 var inputText = vip;
 // var inputText = 'vip';
 // var inputText = document.currentScript.getAttribute('initials');
 var tempText = inputText.split('');
 var inputLength = tempText.length;
-var derpText = tempText.reverse().slice(tempText.length - 4).reverse();
+var derpText = tempText.reverse().slice(tempText.length - 3).reverse();
 initialsText = derpText.join('');
 
 var textSize = sTextSize;
@@ -37,7 +39,7 @@ textNameCanvasContext.font = 'bold 300px monospace';
 // textNameCanvasContext.font = 'bold ' + sTextSize + 'px monospace';
 var textWidth = textNameCanvasContext.measureText(initialsText).width;
 console.log('asdf:', textNameCanvasContext.measureText(initialsText));
-textNameCanvas.width = textWidth;
+textNameCanvas.width = textWidth + 20;
 var rows = 11;
 var cols = 15;
 var radius = sRadius;
@@ -49,7 +51,7 @@ textNameCanvasContext.fillStyle = 'rgba(100, 100, 100, 0.01)'; // super high tra
 // textNameCanvasContext.fillText('sfsd', xIncrement, sHeight/2);
 console.log('xIncrement', xIncrement)
 console.log('sHeight/2', sHeight/2)
-textNameCanvasContext.font = 'bold 300px monospace';
+textNameCanvasContext.font = '300px monospace';
 textNameCanvasContext.textBaseline = "middle";
 textNameCanvasContext.textAlign = "left";
 textNameCanvasContext.fillText(initialsText.toUpperCase(), xIncrement, sHeight/2);
@@ -67,14 +69,20 @@ function pixelUsed(x, y) {
   }
 }
 
+var topColor =
+var bottomColor =
 
 // iterate and draw dots !
-dotMatrix.fillStyle = '#b2321e';
 for (var i = 1; i < rows; i++) {
   for (var j = 1; j < newCols; j++) {
+    var shade = 220 - i * 8; // change gradient fade
+    // each color is 0 - 255       __red__         __green__           __blue__
+    dotMatrix.fillStyle = 'rgb(' + (shade) + ',' + (shade-65) + ',' + (shade+65) + ')';
     var center = [xIncrement * j, yIncrement * i];
-    var newRad = (xIncrement/4 > (radius + j/2 - 2)) ? xIncrement/4 : (radius + j/2 - 2);
-    // var newRad = radius + j/2 - 2;
+    // var newRad = (xIncrement/4 > (radius + j/2 - 2)) ? xIncrement/4 : (radius + j/2 - 2);
+    // var newRad = radius + 5;
+    var newRad = radius + (newCols-3)/3 - 2;
+    // var newRad = radius + j/3 - 2;
     if (pixelUsed(center[0], center[1])) {
       dotMatrix.beginPath(); // this effects rasteration... its interesting
       dotMatrix.moveTo(center[0], center[1]);
@@ -86,5 +94,8 @@ for (var i = 1; i < rows; i++) {
 }
 
 
+// textNameCanvasContext.globalCompositeOperation='destination-over';
+// textNameCanvasContext.fillStyle = '#00321e';
+// textNameCanvasContext.fillRect(0, 0, textNameCanvas.width, sHeight);
 /////////////////////////////
 })(window, document)
