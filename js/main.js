@@ -1,11 +1,7 @@
-// <script type="text/javascript" src="githubbbbb" initials="<your initials here>"></script>
-// var initials = vip;
-
 var all = (function(window, document, undefined) {
 /////////////////////////////
-// console.log('asdf', document.getElementsByTagName('initials')[0]);
-var vip = 'wer';
-// var vip = initials;
+var script = document.getElementsByTagName('script')[0];
+var vip = script.getAttribute('initials');
 
 var scale = 1;
 var sWidth = 435 / scale;
